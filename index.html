@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Puzzle Pro - Gesture Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Mono&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="app-header fade-in">
+            <div class="logo-container">
+                <img src="LOGO SMAN 1 KRAKSAAN 2021 (2).png" alt="Logo 1" class="logo">
+                <img src="LOGO OSKAMATURA (1).png" alt="Logo 2" class="logo">
+                <img src="Matrix.png" alt="Logo 3" class="logo">
+            </div>
+            <h1 class="main-title">MATRIX<span class="thin">PUZZLE</span><span class="pro-tag">PRO</span></h1>
+            <div class="status-bar">
+                <span class="status-item"><span class="dot green"></span> GESTURE_ENGINE: ACTIVE</span>
+                <span class="status-item">|</span>
+                <span class="status-item">USER: GUEST_01</span>
+            </div>
+        </header>
+
+        <main class="main-content slide-up">
+            <div id="capture-zone">
+                <div class="canvas-viewport">
+                    <video class="input_video"></video>
+                    <canvas id="ui_canvas"></canvas>
+                    <div id="countdown"></div>
+                    <div class="scanlines"></div>
+                </div>
+                <div class="instruction-card fade-in-delay">
+                    <div class="icon-gestures">
+                        <span class="icon"></span>
+                        <span class="icon"></span>
+                    </div>
+                    <p class="instruction-text">
+                        <span class="highlight">BINGKAI:</span> Gunakan telunjuk & jempol (2 tangan).<br>
+                        <span class="highlight">CAPTURE:</span> Cubit jari kanan Anda.
+                    </p>
+                </div>
+            </div>
+
+            <div id="game-zone" class="hidden">
+                <div class="puzzle-wrapper">
+                    <div id="puzzle-board"></div>
+                </div>
+
+                <div class="button-group fade-in">
+                    <button id="reset-btn" class="btn-pro secondary">
+                        <span class="icon-camera"></span> RE-TAKE FOTO
+                    </button>
+                    <button id="hint-btn" class="btn-pro">
+                        <span class="icon-eye"></span> LIHAT HINT
+                    </button>
+                    <button id="auto-win-btn" class="btn-pro danger">
+                        <span class="icon-zap"></span> AUTO WIN
+                    </button>
+                </div>
+                <div id="win-screen" class="hidden scale-in">
+                    <h2 class="win-title">SYSTEM_RESTORED</h2>
+                    <p class="win-subtitle">Puzzle solved successfully.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer fade-in">
+            <p>&copy; 2026 MATRIX INFORMATIKA. Advanced Gesture Solutions.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
